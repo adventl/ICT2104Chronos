@@ -1,5 +1,5 @@
-MSP430 C/C++ Optimizer                  v4.2.1
-Build Number 1NGPW-KDADEMDK-RTARQ-WAR-ZACIF_U_S_R
+MSP430 C/C++ Optimizer                  v4.4.3
+Build Number 1PB2X-KDADEMDK-RTARQ-WAR-ZACIF_U_U_T
 Making idle_loop a function synonym of to_lpm
 
 		======File-level Analysis Summary======
@@ -38,11 +38,12 @@ extern void init_application() is called from 1 sites in this file.
 	SetVCore() (1 times)
 
 extern void init_global_variables() is called from 1 sites in this file.
-    It appears to be inlineable (size = 61 units)
+    It appears to be inlineable (size = 62 units)
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	battery_measurement() (1 times)
 	reset_batt_measurement() (1 times)
+	reset_iamonitor() (1 times)
 	reset_temp_measurement() (1 times)
 	reset_rf() (1 times)
 	reset_acceleration() (1 times)
@@ -61,8 +62,8 @@ extern int main() is called from 0 sites in this file.
 	display_update() (1 times)
 	process_requests() (1 times)
 	wakeup_event() (1 times)
-	_nop() (1 times)
-	_bis_SR_register() (1 times)
+	__no_operation() (1 times)
+	__bis_SR_register() (1 times)
 	__delay_cycles() (1 times)
 	display_chars() (2 times)
 	display_counter() (1 times)
@@ -119,7 +120,6 @@ These functions may be recursive:
 
 These external functions are called but not defined here:
 	clear_display()
-	__no_operation()
 	temperature_measurement()
 	do_altitude_measurement()
 	do_acceleration_measurement()
@@ -130,8 +130,7 @@ These external functions are called but not defined here:
 	display_acceleration()
 	display_counter()
 	display_chars()
-	_bis_SR_register()
-	_nop()
+	__no_operation()
 	reset_counter()
 	reset_clock()
 	reset_date()
@@ -142,6 +141,7 @@ These external functions are called but not defined here:
 	reset_acceleration()
 	reset_rf()
 	reset_temp_measurement()
+	reset_iamonitor()
 	reset_batt_measurement()
 	battery_measurement()
 	SetVCore()
@@ -208,7 +208,7 @@ extern void init_application() is called from 1 sites in this file.
 ==============================================================================
 
 extern void init_global_variables() is called from 1 sites in this file.
-    It appears to be inlineable (size = 61 units)
+    It appears to be inlineable (size = 62 units)
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	read_calibration_values() (1 times)

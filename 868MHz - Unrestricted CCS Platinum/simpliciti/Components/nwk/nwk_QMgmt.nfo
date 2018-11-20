@@ -1,5 +1,5 @@
-MSP430 C/C++ Optimizer                  v4.2.1
-Build Number 1NGPW-KDADEMDK-RTARQ-WAR-ZACIF_U_S_R
+MSP430 C/C++ Optimizer                  v4.4.3
+Build Number 1PB2X-KDADEMDK-RTARQ-WAR-ZACIF_U_U_T
 
 		======File-level Analysis Summary======
 
@@ -16,7 +16,7 @@ extern void nwk_QadjustOrder() is called from 1 sites in this file.
     It calls these functions:
 	__set_interrupt_state() (1 times)
 	__disable_interrupt() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 
 extern struct $$fake3 *nwk_QfindOldest() is called from 0 sites in this file.
     It appears to be inlineable (size = 139 units)
@@ -25,7 +25,7 @@ extern struct $$fake3 *nwk_QfindOldest() is called from 0 sites in this file.
 	memcmp() (1 times)
 	__set_interrupt_state() (2 times)
 	__disable_interrupt() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 	nwk_getConnInfo() (1 times)
 
 extern struct $$fake3 *nwk_QfindSlot() is called from 0 sites in this file.
@@ -50,7 +50,7 @@ These external functions are called but not defined here:
 	memcmp()
 	memset()
 	nwk_getConnInfo()
-	__get_interrupt_state()
+	__get_SR_register()
 	__disable_interrupt()
 	__set_interrupt_state()
 

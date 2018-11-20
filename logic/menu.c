@@ -54,11 +54,11 @@
 #include "temperature.h"
 #include "altitude.h"
 #include "battery.h"
-//#include "bluerobin.h"
 #include "rfsimpliciti.h"
 #include "acceleration.h"
 #include "rfbsl.h"
 #include "counter.h"
+#include "inactivitymonitor.h"
 
 // *************************************************************************************************
 // Defines section
@@ -111,9 +111,12 @@ u8 update_acceleration(void)
     return (display.flag.update_acceleration);
 }
 
-u8 update_counter(void)
-{
-    return(display.flag.update_counter);
+u8 update_counter(void) {
+	return (display.flag.update_counter);
+}
+
+u8 update_iamonitor(void) {
+	return (display.flag.update_iamonitor);
 }
 // *************************************************************************************************
 // User navigation ( [____] = default menu item after reset )
@@ -155,7 +158,7 @@ const struct menu menu_L1_Temperature = {
     FUNCTION(mx_temperature),         // sub menu function
     FUNCTION(display_temperature),    // display function
     FUNCTION(update_temperature),     // new display data
-    &menu_L1_Acceleration,
+    &menu_L1_Iamonitor,
 };
 
 // Line1 - Altitude
@@ -167,15 +170,15 @@ const struct menu menu_L1_Temperature = {
     &menu_L1_Acceleration
 };*/
 
-/*
-// Line1 - Heart Rate
-const struct menu menu_L1_Heartrate = {
-    FUNCTION(sx_bluerobin),           // direct function
-    FUNCTION(mx_bluerobin),           // sub menu function
-    FUNCTION(display_heartrate),      // display function
-    FUNCTION(update_time),            // new display data
-    &menu_L1_Speed,
-};*/
+
+// Line1 - inactivitMonitor
+const struct menu menu_L1_Iamonitor = {
+    FUNCTION(sx_iamonitor),           // direct function
+    FUNCTION(mx_iamonitor),           // sub menu function
+    FUNCTION(display_iamonitor),      // display function
+    FUNCTION(update_iamonitor),            // new display data
+    &menu_L1_Acceleration,
+};
 
 /*
 // Line1 - Speed

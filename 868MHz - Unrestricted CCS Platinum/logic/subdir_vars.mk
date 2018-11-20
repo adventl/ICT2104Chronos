@@ -13,6 +13,7 @@ C_SRCS += \
 ../logic/counter.c \
 ../logic/date.c \
 ../logic/hmac.c \
+../logic/inactivityMonitor.c \
 ../logic/menu.c \
 ../logic/rfbsl.c \
 ../logic/rfsimpliciti.c \
@@ -33,6 +34,7 @@ OBJS += \
 ./logic/counter.obj \
 ./logic/date.obj \
 ./logic/hmac.obj \
+./logic/inactivityMonitor.obj \
 ./logic/menu.obj \
 ./logic/rfbsl.obj \
 ./logic/rfsimpliciti.obj \
@@ -53,6 +55,7 @@ C_DEPS += \
 ./logic/counter.pp \
 ./logic/date.pp \
 ./logic/hmac.pp \
+./logic/inactivityMonitor.pp \
 ./logic/menu.pp \
 ./logic/rfbsl.pp \
 ./logic/rfsimpliciti.pp \
@@ -73,6 +76,7 @@ C_DEPS__QUOTED += \
 "logic\counter.pp" \
 "logic\date.pp" \
 "logic\hmac.pp" \
+"logic\inactivityMonitor.pp" \
 "logic\menu.pp" \
 "logic\rfbsl.pp" \
 "logic\rfsimpliciti.pp" \
@@ -93,6 +97,7 @@ OBJS__QUOTED += \
 "logic\counter.obj" \
 "logic\date.obj" \
 "logic\hmac.obj" \
+"logic\inactivityMonitor.obj" \
 "logic\menu.obj" \
 "logic\rfbsl.obj" \
 "logic\rfsimpliciti.obj" \
@@ -113,6 +118,7 @@ C_SRCS__QUOTED += \
 "../logic/counter.c" \
 "../logic/date.c" \
 "../logic/hmac.c" \
+"../logic/inactivityMonitor.c" \
 "../logic/menu.c" \
 "../logic/rfbsl.c" \
 "../logic/rfsimpliciti.c" \

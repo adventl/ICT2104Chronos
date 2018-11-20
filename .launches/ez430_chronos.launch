@@ -5,7 +5,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM.TI MSP430 USB1/MSP430" value="${build_artifact:ez430_chronos}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT.TI MSP430 USB1/MSP430" value="ez430_chronos"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:ez430_chronos}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.TI MSP430 USB1/MSP430" value="C:/Users\wenqing\Downloads\EZ430-Chronos-Firmware-master\EZ430-Chronos-Firmware-master\868MHz - Unrestricted CCS Platinum\ez430_chronos_868MHz.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM.TI MSP430 USB1/MSP430" value="D:/Documents\Dropbox\SIT\2104 - Embedded Systems Programming\Labs\2104Git\ICT2104Chronos\868MHz - Unrestricted CCS Platinum\ez430_chronos_868MHz.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/ez430_chronos"/>
 </listAttribute>

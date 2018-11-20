@@ -75,6 +75,7 @@ typedef union
         u16 update_alarm : 1;           // 1 = Alarm time was updated
         u16 update_acceleration : 1;    // 1 = Acceleration data was updated
         u16 update_counter : 1;         // 1 = Counter was updated
+        u16 update_iamonitor : 1;
     } flag;
     u16 all_flags;                      // Shortcut to all display flags (for reset)
 } s_display_flags;

@@ -65,6 +65,7 @@
 #include "acceleration.h"
 #include "temperature.h"
 #include "counter.h"
+#include "inactivitymonitor.h"
 
 // *************************************************************************************************
 // Prototypes section
@@ -273,6 +274,8 @@ __interrupt void TIMER0_A0_ISR(void)
 
     // Set clock update flag
     display.flag.update_time = 1;
+
+    do_iamonitor();
 
     // While SimpliciTI stack operates or BlueRobin searches, freeze system state
     if (is_rf())

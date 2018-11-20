@@ -1,5 +1,5 @@
-MSP430 C/C++ Optimizer                  v4.2.1
-Build Number 1NGPW-KDADEMDK-RTARQ-WAR-ZACIF_U_S_R
+MSP430 C/C++ Optimizer                  v4.4.3
+Build Number 1PB2X-KDADEMDK-RTARQ-WAR-ZACIF_U_U_T
 
 		======File-level Analysis Summary======
 
@@ -40,7 +40,7 @@ extern void MRFI_Init() is called from 0 sites in this file.
 	mrfiRadioInterfaceWriteReg() (2 times)
 	__set_interrupt_state() (1 times)
 	__disable_interrupt() (5 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 	mrfiRadioInterfaceReadReg() (4 times)
 	mrfiRadioInterfaceCmdStrobe() (7 times)
 	mrfiRadioInterfaceInit() (1 times)
@@ -78,7 +78,7 @@ extern void MRFI_ReplyDelay() is called from 0 sites in this file.
 	Mrfi_DelayUsecSem() (1 times)
 	__set_interrupt_state() (2 times)
 	__disable_interrupt() (2 times)
-	__get_interrupt_state() (2 times)
+	__get_SR_register() (2 times)
 
 extern char MRFI_Rssi() is called from 0 sites in this file.
     It appears to be inlineable (size = 19 units)
@@ -132,7 +132,7 @@ extern void MRFI_Sleep() is called from 0 sites in this file.
 	mrfiRadioInterfaceCmdStrobe() (1 times)
 	MRFI_RxIdle() (1 times)
 	__disable_interrupt() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 
 extern unsigned char MRFI_Transmit() is called from 0 sites in this file.
     It appears to be inlineable (size = 110 units)
@@ -165,7 +165,7 @@ static void Mrfi_DelayUsec() is called from 4 sites in this file.
 	__set_interrupt_state() (1 times)
 	BSP_Delay() (1 times)
 	__disable_interrupt() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 
 static void Mrfi_DelayUsecSem() is called from 1 sites in this file.
     It appears to be inlineable (size = 25 units)
@@ -174,7 +174,7 @@ static void Mrfi_DelayUsecSem() is called from 1 sites in this file.
 	__set_interrupt_state() (1 times)
 	BSP_Delay() (1 times)
 	__disable_interrupt() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 
 static void Mrfi_RandomBackoffDelay() is called from 1 sites in this file.
     It appears to be inlineable (size = 19 units)
@@ -208,7 +208,7 @@ static void Mrfi_SyncPinRxIsr() is called from 1 sites in this file.
 	__set_interrupt_state() (1 times)
 	mrfiRadioInterfaceCmdStrobe() (4 times)
 	__disable_interrupt() (2 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 	MRFI_RxCompleteISR() (1 times)
 	Mrfi_CalculateRssi() (1 times)
 	Mrfi_RxAddrIsFiltered() (1 times)
@@ -224,7 +224,7 @@ extern unsigned char mrfiRadioInterfaceCmdStrobe() is called from 25 sites in th
 	Mrfi_DelayUsec() (1 times)
 	mrfiRadioInterfaceWriteReg() (2 times)
 	mrfiRadioInterfaceReadReg() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 	__disable_interrupt() (2 times)
 
 extern void mrfiRadioInterfaceInit() is called from 1 sites in this file.
@@ -238,7 +238,7 @@ extern unsigned char mrfiRadioInterfaceReadReg() is called from 8 sites in this 
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	__set_interrupt_state() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 	__disable_interrupt() (2 times)
 
 extern void mrfiRadioInterfaceReadRxFifo() is called from 3 sites in this file.
@@ -247,14 +247,14 @@ extern void mrfiRadioInterfaceReadRxFifo() is called from 3 sites in this file.
     It calls these functions:
 	__set_interrupt_state() (1 times)
 	__disable_interrupt() (2 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 
 extern void mrfiRadioInterfaceWriteReg() is called from 9 sites in this file.
     It appears to be inlineable (size = 36 units)
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	__set_interrupt_state() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 	__disable_interrupt() (2 times)
 
 extern void mrfiRadioInterfaceWriteTxFifo() is called from 1 sites in this file.
@@ -262,7 +262,7 @@ extern void mrfiRadioInterfaceWriteTxFifo() is called from 1 sites in this file.
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	__set_interrupt_state() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 	__disable_interrupt() (2 times)
 
 Address of global variable is never taken:
@@ -320,7 +320,7 @@ These external functions are called but not defined here:
 	memset()
 	MRFI_RxCompleteISR()
 	BSP_Delay()
-	__get_interrupt_state()
+	__get_SR_register()
 	__set_interrupt_state()
 	__enable_interrupt()
 	__disable_interrupt()

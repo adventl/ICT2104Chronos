@@ -107,12 +107,12 @@
 #include "altitude.h"
 #include "battery.h"
 #include "acceleration.h"
-//#include "bluerobin.h"
 #include "rfsimpliciti.h"
 #include "simpliciti.h"
 #include "rfbsl.h"
 #include "test.h"
 #include "counter.h"
+#include "inactivityMonitor.h"
 
 // *************************************************************************************************
 // Prototypes section
@@ -434,8 +434,12 @@ void init_global_variables(void)
     // Reset temperature measurement
     reset_temp_measurement();
 
+    reset_iamonitor();
+
     // Reset battery measurement
     reset_batt_measurement();
+
+
     battery_measurement();
 }
 

@@ -1,5 +1,5 @@
-MSP430 C/C++ Optimizer                  v4.2.1
-Build Number 1NGPW-KDADEMDK-RTARQ-WAR-ZACIF_U_S_R
+MSP430 C/C++ Optimizer                  v4.4.3
+Build Number 1PB2X-KDADEMDK-RTARQ-WAR-ZACIF_U_U_T
 
 		======File-level Analysis Summary======
 
@@ -21,6 +21,7 @@ extern void TIMER0_A0_ISR() is called from 0 sites in this file.
 	stop_alarm() (1 times)
 	check_alarm() (1 times)
 	is_rf() (1 times)
+	do_iamonitor() (1 times)
 	clock_tick() (1 times)
 
 extern void TIMER0_A1_5_ISR() is called from 0 sites in this file.
@@ -93,6 +94,7 @@ These external functions are called but not defined here:
 	stopwatch_tick()
 	BRRX_TimerTask_v()
 	clock_tick()
+	do_iamonitor()
 	is_rf()
 	check_alarm()
 	stop_alarm()

@@ -1,5 +1,5 @@
-MSP430 C/C++ Optimizer                  v4.2.1
-Build Number 1NGPW-KDADEMDK-RTARQ-WAR-ZACIF_U_S_R
+MSP430 C/C++ Optimizer                  v4.4.3
+Build Number 1PB2X-KDADEMDK-RTARQ-WAR-ZACIF_U_U_T
 
 		======File-level Analysis Summary======
 
@@ -10,7 +10,7 @@ extern void ReadBurstReg() is called from 0 sites in this file.
     It calls these functions:
 	__set_interrupt_state() (1 times)
 	__disable_interrupt() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 
 extern unsigned char ReadSingleReg() is called from 1 sites in this file.
     It appears to be inlineable (size = 13 units)
@@ -18,7 +18,7 @@ extern unsigned char ReadSingleReg() is called from 1 sites in this file.
     It calls these functions:
 	__set_interrupt_state() (1 times)
 	__disable_interrupt() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 
 extern void ResetRadioCore() is called from 0 sites in this file.
     It appears to be inlineable (size = 5 units)
@@ -35,7 +35,7 @@ extern unsigned char Strobe() is called from 2 sites in this file.
 	WriteSingleReg() (2 times)
 	ReadSingleReg() (1 times)
 	__disable_interrupt() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 
 extern void WriteBurstReg() is called from 0 sites in this file.
     It appears to be inlineable (size = 48 units)
@@ -43,7 +43,7 @@ extern void WriteBurstReg() is called from 0 sites in this file.
     It calls these functions:
 	__set_interrupt_state() (1 times)
 	__disable_interrupt() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 
 extern void WritePATable() is called from 0 sites in this file.
     It appears to be inlineable (size = 69 units)
@@ -51,14 +51,14 @@ extern void WritePATable() is called from 0 sites in this file.
     It calls these functions:
 	__set_interrupt_state() (1 times)
 	__disable_interrupt() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 
 extern void WriteSingleReg() is called from 2 sites in this file.
     It has 3 non-trivial scope blocks nested 3 deep.
     It calls these functions:
 	__set_interrupt_state() (1 times)
 	__disable_interrupt() (1 times)
-	__get_interrupt_state() (1 times)
+	__get_SR_register() (1 times)
 
 
 These functions may be recursive:
@@ -72,7 +72,7 @@ These functions may be recursive:
 
 These external functions are called but not defined here:
 	__delay_cycles()
-	__get_interrupt_state()
+	__get_SR_register()
 	__disable_interrupt()
 	__set_interrupt_state()
 
