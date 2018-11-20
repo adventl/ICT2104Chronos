@@ -47,6 +47,8 @@ extern void stop_buzzer(void);
 extern void toggle_buzzer(void);
 extern u8 is_buzzer(void);
 extern void countdown_buzzer(void);
+extern void buzzer_note(u8 cycles, u16 on_time, u16 off_time, u16 frequency);
+
 
 // *************************************************************************************************
 // Defines section

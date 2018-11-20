@@ -218,3 +218,47 @@ void countdown_buzzer(void)
     }
 }
 
+// *************************************************************************************************
+// Modified start buzzer, changes the pitch of the buzzer by changing the PWM
+// @fn          start_buzzer
+// @brief       Start buzzer output for a number of cylces
+// @param       u8 cycles       Keep buzzer output for number of cycles
+//              u16 on_time     Output buzzer for "on_time" ACLK ticks
+//              u16 off_time    Do not output buzzer for "off_time" ACLK ticks
+//				u16 frequency   Changes PWM, higher value for higher pitch, lower value for lower pitch
+// @return      none
+// *************************************************************************************************
+void buzzer_note(u8 cycles, u16 on_time, u16 off_time, u16 frequency)
+{
+    // Store new buzzer duration while buzzer is off
+    if (sBuzzer.time == 0)
+    {
+        sBuzzer.time = cycles;
+        sBuzzer.on_time = on_time;
+        sBuzzer.off_time = off_time;
+
+        // Need to init every time, because SimpliciTI claims same timer
+        // Reset TA1R, set up mode, TA1 runs from 32768Hz ACLK
+        TA1CTL = TACLR | MC_1 | TASSEL__ACLK;
+
+        // Set PWM frequency
+        TA1CCR0 = frequency;
+
+        // Enable IRQ, set output mode "toggle"
+        TA1CCTL0 = OUTMOD_4;
+
+        // Allow buzzer PWM output on P2.7
+        P2SEL |= BIT7;
+
+        // Activate Timer0_A3 periodic interrupts
+        fptr_Timer0_A3_function = toggle_buzzer;
+        Timer0_A3_Start(sBuzzer.on_time);
+
+        // Preload timer advance variable
+        sTimer.timer0_A3_ticks = sBuzzer.off_time;
+
+        // Start with buzzer output on
+        sBuzzer.state = BUZZER_ON_OUTPUT_ENABLED;
+    }
+}
+
