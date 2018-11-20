@@ -44,44 +44,44 @@ OBJS += \
 ./logic/user.obj 
 
 C_DEPS += \
-./logic/acceleration.d \
-./logic/alarm.d \
-./logic/altitude.d \
-./logic/base32.d \
-./logic/battery.d \
-./logic/clock.d \
-./logic/counter.d \
-./logic/date.d \
-./logic/hmac.d \
-./logic/menu.d \
-./logic/rfbsl.d \
-./logic/rfsimpliciti.d \
-./logic/sha1.d \
-./logic/stopwatch.d \
-./logic/temperature.d \
-./logic/test.d \
-./logic/totp.d \
-./logic/user.d 
+./logic/acceleration.pp \
+./logic/alarm.pp \
+./logic/altitude.pp \
+./logic/base32.pp \
+./logic/battery.pp \
+./logic/clock.pp \
+./logic/counter.pp \
+./logic/date.pp \
+./logic/hmac.pp \
+./logic/menu.pp \
+./logic/rfbsl.pp \
+./logic/rfsimpliciti.pp \
+./logic/sha1.pp \
+./logic/stopwatch.pp \
+./logic/temperature.pp \
+./logic/test.pp \
+./logic/totp.pp \
+./logic/user.pp 
 
 C_DEPS__QUOTED += \
-"logic\acceleration.d" \
-"logic\alarm.d" \
-"logic\altitude.d" \
-"logic\base32.d" \
-"logic\battery.d" \
-"logic\clock.d" \
-"logic\counter.d" \
-"logic\date.d" \
-"logic\hmac.d" \
-"logic\menu.d" \
-"logic\rfbsl.d" \
-"logic\rfsimpliciti.d" \
-"logic\sha1.d" \
-"logic\stopwatch.d" \
-"logic\temperature.d" \
-"logic\test.d" \
-"logic\totp.d" \
-"logic\user.d" 
+"logic\acceleration.pp" \
+"logic\alarm.pp" \
+"logic\altitude.pp" \
+"logic\base32.pp" \
+"logic\battery.pp" \
+"logic\clock.pp" \
+"logic\counter.pp" \
+"logic\date.pp" \
+"logic\hmac.pp" \
+"logic\menu.pp" \
+"logic\rfbsl.pp" \
+"logic\rfsimpliciti.pp" \
+"logic\sha1.pp" \
+"logic\stopwatch.pp" \
+"logic\temperature.pp" \
+"logic\test.pp" \
+"logic\totp.pp" \
+"logic\user.pp" 
 
 OBJS__QUOTED += \
 "logic\acceleration.obj" \

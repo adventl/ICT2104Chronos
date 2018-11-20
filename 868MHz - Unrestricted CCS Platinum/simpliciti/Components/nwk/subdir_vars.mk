@@ -18,18 +18,18 @@ OBJS += \
 ./simpliciti/Components/nwk/nwk_globals.obj 
 
 C_DEPS += \
-./simpliciti/Components/nwk/nwk.d \
-./simpliciti/Components/nwk/nwk_QMgmt.d \
-./simpliciti/Components/nwk/nwk_api.d \
-./simpliciti/Components/nwk/nwk_frame.d \
-./simpliciti/Components/nwk/nwk_globals.d 
+./simpliciti/Components/nwk/nwk.pp \
+./simpliciti/Components/nwk/nwk_QMgmt.pp \
+./simpliciti/Components/nwk/nwk_api.pp \
+./simpliciti/Components/nwk/nwk_frame.pp \
+./simpliciti/Components/nwk/nwk_globals.pp 
 
 C_DEPS__QUOTED += \
-"simpliciti\Components\nwk\nwk.d" \
-"simpliciti\Components\nwk\nwk_QMgmt.d" \
-"simpliciti\Components\nwk\nwk_api.d" \
-"simpliciti\Components\nwk\nwk_frame.d" \
-"simpliciti\Components\nwk\nwk_globals.d" 
+"simpliciti\Components\nwk\nwk.pp" \
+"simpliciti\Components\nwk\nwk_QMgmt.pp" \
+"simpliciti\Components\nwk\nwk_api.pp" \
+"simpliciti\Components\nwk\nwk_frame.pp" \
+"simpliciti\Components\nwk\nwk_globals.pp" 
 
 OBJS__QUOTED += \
 "simpliciti\Components\nwk\nwk.obj" \

@@ -36,36 +36,36 @@ OBJS += \
 ./driver/timer.obj 
 
 C_DEPS += \
-./driver/adc12.d \
-./driver/as.d \
-./driver/bmp_as.d \
-./driver/bmp_ps.d \
-./driver/buzzer.d \
-./driver/cma_as.d \
-./driver/cma_ps.d \
-./driver/display.d \
-./driver/pmm.d \
-./driver/ports.d \
-./driver/ps.d \
-./driver/radio.d \
-./driver/rf1a.d \
-./driver/timer.d 
+./driver/adc12.pp \
+./driver/as.pp \
+./driver/bmp_as.pp \
+./driver/bmp_ps.pp \
+./driver/buzzer.pp \
+./driver/cma_as.pp \
+./driver/cma_ps.pp \
+./driver/display.pp \
+./driver/pmm.pp \
+./driver/ports.pp \
+./driver/ps.pp \
+./driver/radio.pp \
+./driver/rf1a.pp \
+./driver/timer.pp 
 
 C_DEPS__QUOTED += \
-"driver\adc12.d" \
-"driver\as.d" \
-"driver\bmp_as.d" \
-"driver\bmp_ps.d" \
-"driver\buzzer.d" \
-"driver\cma_as.d" \
-"driver\cma_ps.d" \
-"driver\display.d" \
-"driver\pmm.d" \
-"driver\ports.d" \
-"driver\ps.d" \
-"driver\radio.d" \
-"driver\rf1a.d" \
-"driver\timer.d" 
+"driver\adc12.pp" \
+"driver\as.pp" \
+"driver\bmp_as.pp" \
+"driver\bmp_ps.pp" \
+"driver\buzzer.pp" \
+"driver\cma_as.pp" \
+"driver\cma_ps.pp" \
+"driver\display.pp" \
+"driver\pmm.pp" \
+"driver\ports.pp" \
+"driver\ps.pp" \
+"driver\radio.pp" \
+"driver\rf1a.pp" \
+"driver\timer.pp" 
 
 OBJS__QUOTED += \
 "driver\adc12.obj" \

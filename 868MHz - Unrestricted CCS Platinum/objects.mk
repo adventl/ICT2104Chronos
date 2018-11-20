@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -lrts430x.lib
+LIBS := -l"rts430x.lib"
 

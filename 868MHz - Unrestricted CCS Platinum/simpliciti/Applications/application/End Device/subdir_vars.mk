@@ -10,10 +10,10 @@ OBJS += \
 ./simpliciti/Applications/application/End\ Device/main_ED_BM.obj 
 
 C_DEPS += \
-./simpliciti/Applications/application/End\ Device/main_ED_BM.d 
+./simpliciti/Applications/application/End\ Device/main_ED_BM.pp 
 
 C_DEPS__QUOTED += \
-"simpliciti\Applications\application\End Device\main_ED_BM.d" 
+"simpliciti\Applications\application\End Device\main_ED_BM.pp" 
 
 OBJS__QUOTED += \
 "simpliciti\Applications\application\End Device\main_ED_BM.obj" 

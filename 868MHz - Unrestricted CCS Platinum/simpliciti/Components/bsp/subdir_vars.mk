@@ -10,10 +10,10 @@ OBJS += \
 ./simpliciti/Components/bsp/bsp.obj 
 
 C_DEPS += \
-./simpliciti/Components/bsp/bsp.d 
+./simpliciti/Components/bsp/bsp.pp 
 
 C_DEPS__QUOTED += \
-"simpliciti\Components\bsp\bsp.d" 
+"simpliciti\Components\bsp\bsp.pp" 
 
 OBJS__QUOTED += \
 "simpliciti\Components\bsp\bsp.obj" 
