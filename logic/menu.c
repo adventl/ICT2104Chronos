@@ -132,34 +132,34 @@ const struct menu menu_L1_Time = {
     FUNCTION(mx_time),                // sub menu function
     FUNCTION(display_time),           // display function
     FUNCTION(update_time),            // new display data
-    &menu_L1_Counter,
-};
-
-const struct menu menu_L1_Counter = {
-    FUNCTION(sx_counter),                // direct function
-    FUNCTION(mx_counter),                // sub menu function
-    FUNCTION(display_counter),           // display function
-    FUNCTION(update_counter),            // new display data
-    &menu_L1_Alarm,
-};
-//DANIEL
-// Line1 - Alarm
-const struct menu menu_L1_Alarm = {
-    FUNCTION(sx_alarm),               // direct function
-    FUNCTION(mx_alarm),               // sub menu function
-    FUNCTION(display_alarm),          // display function
-    FUNCTION(update_alarm),           // new display data
-    &menu_L1_Temperature,
-};
-
-// Line1 - Temperature
-const struct menu menu_L1_Temperature = {
-    FUNCTION(dummy),                  // direct function
-    FUNCTION(mx_temperature),         // sub menu function
-    FUNCTION(display_temperature),    // display function
-    FUNCTION(update_temperature),     // new display data
     &menu_L1_Iamonitor,
 };
+
+//const struct menu menu_L1_Counter = {
+//    FUNCTION(sx_counter),                // direct function
+//    FUNCTION(mx_counter),                // sub menu function
+//    FUNCTION(display_counter),           // display function
+//    FUNCTION(update_counter),            // new display data
+//    &menu_L1_Alarm,
+//};
+//DANIEL
+// Line1 - Alarm
+//const struct menu menu_L1_Alarm = {
+//    FUNCTION(sx_alarm),               // direct function
+//    FUNCTION(mx_alarm),               // sub menu function
+//    FUNCTION(display_alarm),          // display function
+//    FUNCTION(update_alarm),           // new display data
+//    &menu_L1_Temperature,
+//};
+
+// Line1 - Temperature
+//const struct menu menu_L1_Temperature = {
+//    FUNCTION(dummy),                  // direct function
+//    FUNCTION(mx_temperature),         // sub menu function
+//    FUNCTION(display_temperature),    // display function
+//    FUNCTION(update_temperature),     // new display data
+//    &menu_L1_Iamonitor,
+//};
 
 // Line1 - Altitude
 /*const struct menu menu_L1_Altitude = {
@@ -177,7 +177,7 @@ const struct menu menu_L1_Iamonitor = {
     FUNCTION(mx_iamonitor),           // sub menu function
     FUNCTION(display_iamonitor),      // display function
     FUNCTION(update_iamonitor),            // new display data
-    &menu_L1_Acceleration,
+    &menu_L1_Time,
 };
 
 /*

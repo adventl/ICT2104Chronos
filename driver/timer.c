@@ -265,7 +265,7 @@ __interrupt void TIMER0_A0_ISR(void)
     TA0CCTL0 &= ~CCIFG;
     // Add 1 sec to TACCR0 register (IRQ will be asserted at 0x7FFF and 0xFFFF = 1 sec intervals)
     //TA0CCR0 += 32768;
-    TA0CCR0 += 3276;
+    TA0CCR0 += 32768;
     // Enable IE
     TA0CCTL0 |= CCIE;
 
@@ -274,8 +274,9 @@ __interrupt void TIMER0_A0_ISR(void)
 
     // Set clock update flag
     display.flag.update_time = 1;
-
-    do_iamonitor();
+    if(is_iamonitor()) {
+    	do_iamonitor();
+    }
 
     // While SimpliciTI stack operates or BlueRobin searches, freeze system state
     if (is_rf())

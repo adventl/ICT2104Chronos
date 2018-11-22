@@ -185,20 +185,6 @@ int main(void)
     {
         // When idle go to LPM3
         idle_loop();
-        if (BUTTON_NUM_IS_PRESSED) {
-                        clear_line(LINE1);
-                        display_temperature(LINE1, DISPLAY_LINE_CLEAR);
-                        display_acceleration(LINE1, DISPLAY_LINE_CLEAR);
-                        display_counter(LINE1, DISPLAY_LINE_CLEAR);
-                        display_chars(LCD_SEG_L2_4_0, (unsigned char *) "SLEEP", SEG_ON);
-                        __delay_cycles(12000000);                       // ~ 1sec
-                        display_chars(LCD_SEG_L2_4_0, (unsigned char *) "SLEEP", SEG_OFF);
-                        //__bis_SR_register(LPM3_bits);             // Enter LPM3
-                        _bis_SR_register(LPM3_bits);
-                        // _BIS_SR(LPM3_bits + GIE);
-                         _nop();
-
-                    }
 
         // Process wake-up events
         if (button.all_flags || sys.all_flags)
@@ -498,7 +484,6 @@ void wakeup_event(void)
         {
             // Clean up display before activating next menu item
             fptr_lcd_function_line1(LINE1, DISPLAY_LINE_CLEAR);
-
 
             // Go to next menu entry
             ptrMenu_L1 = ptrMenu_L1->next;
