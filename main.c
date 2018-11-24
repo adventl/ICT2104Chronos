@@ -80,6 +80,8 @@
 // system
 #include "project.h"
 #include <string.h>
+#include <stdio.h>
+#include <msp430.h>
 
 // driver
 #include "clock.h"
@@ -171,7 +173,9 @@ extern void start_simpliciti_sync(void);
 // *************************************************************************************************
 int main(void)
 {
-    // Init MCU
+
+	printf("test");
+	// Init MCU
     init_application();
 
     // Assign initial value to global variables

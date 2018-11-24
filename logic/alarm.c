@@ -114,7 +114,7 @@ void check_alarm(void)
 
     volatile s32 temperature;
 
-    start_buzzer(1, CONV_MS_TO_TICKS(5000), CONV_MS_TO_TICKS(150));
+    //start_buzzer(1, CONV_MS_TO_TICKS(5000), CONV_MS_TO_TICKS(150));
 
 //    //Only check accel every x seconds
 //    if ((sTime.second%3) != 0 )
@@ -188,7 +188,7 @@ void check_alarm(void)
     //Include +/- 255 to catch overflow
     if ((diff_x == 0 || diff_x==1 || diff_x==-1 || diff_x==255 || diff_x==-255) && (diff_y == 0 || diff_y==1 || diff_y==-1 || diff_y==255 || diff_y==-255) ) {
         sAlarm.state = ALARM_ON;
-        display_chars(LCD_SEG_L1_2_0, (u8 *) "ASS", SEG_ON);
+        //display_chars(LCD_SEG_L1_2_0, (u8 *) "ASS", SEG_ON);
 
     }
     else {

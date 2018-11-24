@@ -3,6 +3,9 @@
  * Created on: Nov 21, 2018
  * Author: Nicholas
  */
+#include <string.h>
+#include <stdio.h>
+#include <msp430.h>
 
 // System/ Default include stuff
 #include "project.h"
@@ -13,6 +16,7 @@
 #include "ports.h"
 #include "buzzer.h"
 
+extern u16 convert_acceleration_value_to_mgrav(u8 value);
 // useful
 #include "inactivitymonitor.h"
 #include "user.h"
@@ -27,14 +31,12 @@ struct iamonitor sIamonitor;
 void reset_iamonitor(void) {
 	sIamonitor.state = INACTIVE;
 	sIamonitor.inactiveCount = 0;
+	display_chars(LCD_SEG_L2_4_0, (u8 *) "resia", SEG_ON);
+	printf("hi");
 }
 
 void sx_iamonitor(u8 line) {
-	clear_line(LINE1);
-	u8 *str;
-    str = int_to_array(sIamonitor.state, 5, 0);
-	clear_line(LINE1);
-	display_chars(LCD_SEG_L2_4_0, (u8 *) str, SEG_ON);
+	display_chars(LCD_SEG_L2_4_0, (u8 *) "sx", SEG_ON);
 }
 
 // Toggle iaMonitor state on star_long
@@ -42,6 +44,7 @@ void mx_iamonitor(u8 line) {
 	if(!sIamonitor.state) {
 		display_chars(LCD_SEG_L2_3_0, (u8 *) "CALI", SEG_ON);
 		sIamonitor.state = CALIBRATING;
+
 	} else {
 		display_chars(LCD_SEG_L2_3_0, (u8 *) "OFF-", SEG_ON);
 		reset_iamonitor();
@@ -66,33 +69,37 @@ void calibrate_iamonitor(void) {
 	for (i = 0; i < 3; i++) {
 		sIamonitor.resting[i] = convert_acceleration_value_to_mgrav(sIamonitor.rawReading[i]);
 	}
+
+	buzzer_note(1, CONV_MS_TO_TICKS(1000),CONV_MS_TO_TICKS(0), 2);
 }
 
 void display_iamonitor(u8 line, u8 update) {
-	if (sTime.system_time%2){
-		display_chars(LCD_SEG_L1_3_0, (u8 *) "one", SEG_ON);
-	} else {
-		display_chars(LCD_SEG_L1_3_0, (u8 *) "two", SEG_ON);
-	}
+
 }
 
 void do_iamonitor(void) {
 
-	int counter;
+	u8 *str;
+    str = int_to_array(sIamonitor.inactiveCount, 5, 4);
+	display_chars(LCD_SEG_L2_4_0, (u8 *) "do", SEG_ON);
 
 	if (sIamonitor.state == CALIBRATING) {
-		buzzer_note(4, CONV_MS_TO_TICKS(100),CONV_MS_TO_TICKS(100), 2);
-		sIamonitor.inactiveCount++;
+		display_chars(LCD_SEG_L2_4_0, (u8 *) "s act", SEG_ON);
 		if (sIamonitor.inactiveCount == 5) {
 			calibrate_iamonitor();
 			sIamonitor.inactiveCount = 0;
 			sIamonitor.state = ACTIVE;
+		    str = int_to_array(sIamonitor.inactiveCount, 5, 0);
+			display_chars(LCD_SEG_L2_4_0, (u8 *) "C is5", SEG_ON);
 		}
+		sIamonitor.inactiveCount++;
 	} else if (sIamonitor.state == ACTIVE) {
+		display_chars(LCD_SEG_L2_4_0, (u8 *) "s act", SEG_ON);
 		check_iamonitor();
 	} else if (sIamonitor.state == RING) {
-		buzzer_note(2, CONV_MS_TO_TICKS(500),CONV_MS_TO_TICKS(100), 2);
+		buzzer_note(3, CONV_MS_TO_TICKS(333),CONV_MS_TO_TICKS(50), 2);
 	}
+	display.flag.update_iamonitor = 1;
 }
 
 // chceking accelerometer goes here
@@ -122,11 +129,15 @@ void check_iamonitor(void) {
 		sIamonitor.converted[2] <= sIamonitor.resting[2] + THRESHOLD)) {
 		buzzer_note(3, CONV_MS_TO_TICKS(200),CONV_MS_TO_TICKS(100), 2);
 		sIamonitor.inactiveCount++;
+	} else {
+		buzzer_note(3, CONV_MS_TO_TICKS(200),CONV_MS_TO_TICKS(100), 20);
+		sIamonitor.inactiveCount = 0;
 	}
 
 	if (sIamonitor.inactiveCount == ALARMLIMIT) {
 		sIamonitor.state = RING;
 	}
+	buzzer_note(2, CONV_MS_TO_TICKS(500),CONV_MS_TO_TICKS(100), 2);
 }
 
 u8 is_iamonitor(void) {

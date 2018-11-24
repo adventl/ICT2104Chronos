@@ -27,8 +27,8 @@ extern void calibrate_iamonitor(void);
 #define CALIBRATING (1u)
 #define ACTIVE      (2u)
 #define RING        (3u)
-#define THRESHOLD   (1u)
-#define ALARMLIMIT  (1u)
+#define THRESHOLD   (100u)
+#define ALARMLIMIT  (5u)
 
 // *************************************************************************************************
 // Global Variable section

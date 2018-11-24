@@ -274,6 +274,7 @@ __interrupt void TIMER0_A0_ISR(void)
 
     // Set clock update flag
     display.flag.update_time = 1;
+
     if(is_iamonitor()) {
     	do_iamonitor();
     }
